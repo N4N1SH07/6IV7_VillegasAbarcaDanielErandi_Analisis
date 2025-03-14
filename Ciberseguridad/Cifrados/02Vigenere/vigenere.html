@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado Vigenere</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet"> <!-- Enlazar al archivo CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Cifrado Vigenère</h1>
+        <hr>
+        <div class="center-block">
+            <article class="datos">
+                <h3>Texto a cifrar: </h3>
+                <br>
+                <input type="text" id="txt" class="form-control">
+                <br>
+                <input type="button" class="btn btn-info" value="Cifrar" onclick="codificar()">
+                <input type="button" class="btn btn-info" value="Descifrar" onclick="decodificar()">
+                <input type="button" class="btn btn-info" value="Reiniciar" onclick="reiniciar()">
+                <br><br>
+                <h3>Ingresa la clave secreta: </h3>
+                <br>
+                <input type="text" id="txtclave" class="form-control" onpaste="return false;" ondrop="return false;">
+                <br><br>
+                <h3>Resultado: </h3>
+                <br>
+                <textarea id="respuesta" class="form-control" rows="4" onpaste="return false;" ondrop="return false;"></textarea>
+                <br>
+                <input type="button" class="btn btn-info" value="Copiar" onclick="copiar()">
+            </article>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="./js/vigenere.js"></script> <!-- Enlazar al archivo JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
