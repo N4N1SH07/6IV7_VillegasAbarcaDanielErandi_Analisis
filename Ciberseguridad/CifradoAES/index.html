@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado AES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Cifrado AES</h1>
+            <p>Protege tus mensajes con cifrado avanzado de 256 bits</p>
+        </header>
+
+        <main>
+            <div class="mode-selector">
+                <button id="encrypt-btn" class="active">Cifrar</button>
+                <button id="decrypt-btn">Descifrar</button>
+            </div>
+
+            <div id="encrypt-section" class="section active">
+                <h2>Cifrar Mensaje</h2>
+                <textarea id="plain-text" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <div class="key-input">
+                    <label for="encrypt-key">Clave de cifrado (16, 24 o 32 caracteres):</label>
+                    <input type="password" id="encrypt-key" placeholder="Ingresa tu clave">
+                </div>
+                <button id="encrypt-now" class="action-btn">Cifrar Mensaje</button>
+                <div id="encrypt-result" class="result hidden">
+                    <p>Mensaje cifrado:</p>
+                    <textarea id="encrypted-text" readonly></textarea>
+                    <button id="download-encrypted" class="download-btn">Descargar Archivo</button>
+                </div>
+            </div>
+
+            <div id="decrypt-section" class="section">
+                <h2>Descifrar Archivo</h2>
+                <div class="file-upload">
+                    <label for="encrypted-file">Selecciona archivo cifrado:</label>
+                    <input type="file" id="encrypted-file">
+                </div>
+                <div class="key-input">
+                    <label for="decrypt-key">Clave de descifrado:</label>
+                    <input type="password" id="decrypt-key" placeholder="Ingresa tu clave">
+                </div>
+                <button id="decrypt-now" class="action-btn">Descifrar Archivo</button>
+                <div id="decrypt-result" class="result hidden">
+                    <p>Mensaje descifrado:</p>
+                    <textarea id="decrypted-text" readonly></textarea>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Sistema de Cifrado AES &copy; 2023</p>
+        </footer>
+    </div>
+
+    <script src="js/aes.js"></script>
+    <script src="js/fileSaver.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
