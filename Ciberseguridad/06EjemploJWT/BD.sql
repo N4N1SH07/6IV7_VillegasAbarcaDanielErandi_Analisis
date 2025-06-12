@@ -1,24 +1,12 @@
-const mysql = require('mysql2');
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
+-- Crear la base de datos
+CREATE DATABASE jwt_db;
 
-// Crear una conexión con la base de datos
-const db = mysql.createConnection({
-    host: process.env.BD_HOST,
-    user: process.env.BD_USER,
-    password: process.env.BD_PASSWORD,
-    database: process.env.BD_NAME
-});
+-- Usar la base de datos recién creada (corregido: era 'jwt_bd', debe ser 'jwt_db')
+USE jwt_db;
 
-// Verificar que se conecte correctamente
-db.connect(err => {
-    if (err) throw err;
-    console.log("Conectado a la BD en MYSQL");
-    console.log("host:", process.env.BD_HOST);
-    console.log("user:", process.env.BD_USER); // corregido, antes decía BD_NAME
-    console.log("password:", process.env.BD_PASSWORD);
-    console.log("name:", process.env.BD_NAME);
-});
-
-module.exports = db; // corregido: era `bd`, pero la variable es `db`
+-- Crear la tabla de usuarios
+CREATE TABLE usuarios (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
