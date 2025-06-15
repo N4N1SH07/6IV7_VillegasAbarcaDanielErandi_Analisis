@@ -2,15 +2,17 @@
   "name": "06ejemplojwt",
   "version": "1.0.0",
   "description": "Ejemplo de implementacion de un jwt",
-  "main": "index.js",
+  "main": "backend/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/index.js"
   },
-  "author": "PedPesV",
+  "author": "N4N1SH07",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
